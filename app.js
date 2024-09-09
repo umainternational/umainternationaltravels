@@ -60,5 +60,5 @@ window.addEventListener('scroll', () => {
 ///book now
 
   function booknow() {
-    window.open("./booknow.html", "booknow", "width=492,height=504,resizable=yes,scrollbars=yes");
+    window.open("./booknow.html", "booknow", "width=762,height=862,resizable=yes,scrollbars=yes");
   }
