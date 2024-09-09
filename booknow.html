@@ -3,122 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Now</title>
-    <link rel="stylesheet" href="style.css">
-</head><style>
-    @media print {
-      /* Set page margins and size */
-      @page {
-        margin: 1cm;
-        size: A4 landscape;
-      }
-      #book_form{
-        border: 1px solid #000;
-        color: #000;
-        width: 100%;
-      }
-  
-      /* Remove background colors and images */
-      body, #book_form{
-        background-color: transparent;
-        background-image: none;
-      }
-  
-      /* Make fieldsets and tables fit on the page */
-      fieldset, table {
-        page-break-inside: avoid;
-      }
-  
-      /* Make sure the submit button doesn't get cut off */
-      #submit_btn {
-        page-break-before: avoid;
-        margin: 0 auto;
-        display: block;
-      }
-    }
-  </style>
-  <body>
-    <section style="width: 90%;">
-      <form id="book_form"  style="width: 110%;">
-        <h1>Book Parcel</h1>
+    <title>Uma International Booking Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background: #161813;
+            color: white;
+        }
+        form {
+            display: inline-block;
+            text-align: left;
+            width: 50%;
+        }
+        .form-input {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+        }
+        select, input[type="text"], input[type="tel"], input[type="email"], input[type="date"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #000000;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Uma International</h1>
+    <h2>Book Now</h2>
 
-        <fieldset style="background-color: rgb(0, 40, 33);">
-        <legend>Sender's details</legend>
-        <table>
-          <tr>
-          <td><label for="name">Sender's Name: </label></td>
-          <td><input type="text" id="name" name="name" required /></td>
-          <td>&nbsp;</td>
-          <td><label for="email">Email: </label></td>
-          <td><input type="email" id="email" name="email" required /></td>
-          <td>&nbsp;</td>
-          <td><label for="phone">Phone: </label></td>
-          <td> <input type="tel" id="phone" name="phone" required /></td>
-          <td>&nbsp;</td>
-          <td><label for="address">Address: </label></td>
-          <td><textarea id="address" name="address" required rows="3" cols="30"></textarea></td>
-          </tr>
-        </table>
-        </fieldset>
+    <form action="https://formspree.io/f/manwkgpe" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" class="form-input" required>
 
-        <table><tr><td>&nbsp;</td></tr></table>
+        <label for="address">Address:</label>
+        <textarea id="address" name="Address" class="form-input" rows="3" required></textarea><br>
 
-        <fieldset style="background-color: rgb(0, 40, 33);">
-          <legend>Parcel's details</legend>
-          <table>
-        <tr>
-          <td><label for="p_type">Parcel type: </label></td>
-          <td><select type="text" id="p_type" name="p_type" required>
-            <option>----Select Parcel Type----</option>
-            <option>Document</option>
-            <option>Luggage</option>
-            <option>Food</option>
-            <option>Medicines</option>
-            <option>Vehicle</option>
-          </select></td>
-        </tr>
-      <tr><td>&nbsp;</td></tr>
-        <tr>
-          <td><label for="p_weight">Parcel Weight:</label></td>
-          <td><input type="number" id="p_weight" name="p_weight" required />  kg</td>
-        </tr>
-        <tr><td>&nbsp;</td></tr>
-        <tr>
-          <td><label for="p_dim">Parcel Dimension:</label></td>
-          <td><input type="tel" id="p_dim" name="p_dim" required/></td>
-          <td>LxWxH</td>
-        </tr>
-      </table>
-    </fieldset> 
+        <label for="mobno">Mob No:</label>
+        <input type="tel" id="mobno" name="Mobile No" class="form-input" required>
 
-    <table><tr><td>&nbsp;</td></tr></table>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="Email" class="form-input" required>
 
-    <fieldset style="background-color: rgb(0, 40, 33);">
-      <legend>Receiver's details</legend>
-      <table>
-        <tr>
-        <td><label for="r_name">Receiver's Name: </label></td>
-        <td><input type="text" id="r_name" name="r_name" required /></td>
-        <td>&nbsp;</td>
-        <td><label for="r_email">Email: </label></td>
-        <td><input type="email" id="r_email" name="r_email" required /></td>
-        <td>&nbsp;</td>
-        <td><label for="r_phone">Phone: </label></td>
-        <td> <input type="tel" id="r_phone" name="r_phone" required /></td>
-        <td>&nbsp;</td>
-        <td><label for="r_address">Address: </label></td>
-        <td><textarea id="r_address" name="r_address" required rows="3" cols="30"></textarea></td>
-        </tr>
-      </table>
-      </fieldset>
+        <h3>Booking Details:</h3>
 
-      <table>
-        <tr>&nbsp;</tr>
-        <tr>
-          <td><input type="button" value="Submit" id="submit_btn"></td>
-        </tr>
-      </table>
-      </form>
-    </section>
-  </body>
+        <label for="booking-type">Booking Type:</label>
+        <select id="booking-type" name="Booking Type" class="form-input" required>
+            <option value="">Select</option>
+            <option value="flight">Flight</option>
+            <option value="train">Train</option>
+            <option value="bus">Bus</option>
+            <option value="hotel">Hotel</option>
+        </select>
+
+        <label for="from">From:</label>
+        <input type="text" id="from" name="From" class="form-input" required>
+
+        <label for="to">To:</label>
+        <input type="text" id="to" name="To" class="form-input" required>
+
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="Date" class="form-input" required>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
 </html>
