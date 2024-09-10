@@ -231,7 +231,7 @@ color: #cdcdcd;
 position: relative;
 display: block;
 background: #161813;
-padding-top: 100px;
+padding-top: 150px;
 color: white;
 width: 100%;
 height: 100vh;
@@ -342,12 +342,13 @@ margin: 0;
 position: relative;
 display: block;
 background: #161813;
+height: 100vh;
 }
 .contact-form {
 position: relative;
 display: block;
 background: #161813;
-padding: 110px 60px 80px;
+padding: 150px 60px 80px;
 z-index: 3;
 }
 .contact-form .sec-title-style1{
@@ -372,7 +373,7 @@ margin: 0;
 position: relative;
 display: block;
 background: transparent;
-width: 45%;
+width: 40%;
 }
 .contact-form form{
 position: relative;
@@ -446,7 +447,7 @@ color: #848484;
 .contact-form form button {
 position: relative;
 display: block;
-width: 100%;
+width: 20%;
 background: #FFA500;
 border: 1px solid #FFA500;
 border-radius: 10px;
